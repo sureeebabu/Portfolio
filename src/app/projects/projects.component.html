@@ -1,0 +1,47 @@
+<div class="pt-5">
+    <div class="row">
+        <div class="col-3 pt-2" *ngFor="let p of projects">
+            <div class="card">
+                <div class="text-center">
+                    <img [src]="p.image" alt="Avatar" style="width:50%">
+                </div>
+                <div class="container text-center">
+                    <h4><b>{{p.name}}</b></h4>
+                    <!-- <p>Architect & Engineer</p> -->
+                    <div class="py-2" *ngIf="p.store === 'AOS'">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <a [href]="p.aosLink" target="_blank">
+                                    <img src="../../assets/logo/playstore.png" width="150">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-2" *ngIf="p.store === 'iOS'">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <a [href]="p.iOSLink" target="_blank">
+                                    <img src="../../assets/logo/AppleStore.png" width="150">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-2" *ngIf="p.store === 'both'">
+                        <div class="row">
+                            <div class="col-6">
+                                <a [href]="p.aosLink" target="_blank">
+                                    <img src="../../assets/logo/playstore.png" width="150">
+                                </a>
+                            </div>
+                            <div class="col-6 text-end">
+                                <a [href]="p.iOSLink" target="_blank">
+                                    <img src="../../assets/logo/AppleStore.png" width="150">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
